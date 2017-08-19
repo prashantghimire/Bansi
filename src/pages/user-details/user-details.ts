@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {PersonServiceProvider} from "../../providers/person-service/person-service";
 
 /**
  * Generated class for the UserDetailsPage page.
@@ -15,7 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user : any = {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public personService:PersonServiceProvider) {
+    this.user = personService.selectedPerson;
   }
 
   ionViewDidLoad() {
