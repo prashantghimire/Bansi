@@ -12,8 +12,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, public personService : PersonServiceProvider) {
 
   }
-  goToNext(){
-    // this.navCtrl.push('LandingPage');
+
+  ionViewDidLoad(){
     this.personService.load()
       .then((users)=> {
         this.users = users;
@@ -21,5 +21,13 @@ export class HomePage {
       .catch((error)=>{
         console.log(error);
       });
+  }
+
+  goToNext(){
+    this.navCtrl.push('LandingPage');
+  }
+
+  onSelectUser(){
+    this.navCtrl.push('UserDetailsPage');
   }
 }
