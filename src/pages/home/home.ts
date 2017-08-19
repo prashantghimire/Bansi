@@ -27,7 +27,9 @@ export class HomePage {
     this.navCtrl.push('LandingPage');
   }
 
-  onSelectUser(){
+  onSelectUser(user){
+    this.personService.selectedPerson = user;
+    //console.log(this.personService.selectedPerson);
     this.navCtrl.push('UserDetailsPage');
   }
 }

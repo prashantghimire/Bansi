@@ -9,7 +9,7 @@
 <ion-content padding>
   <button ion-button (click)="goToNext()">Next</button>
   <ion-list>
-    <ion-item *ngFor="let user of users" (click)="onSelectUser()">
+    <ion-item *ngFor="let user of users" (click)="onSelectUser(user)">
 
       <ion-icon name="person" item-start></ion-icon>
       <p>{{user.name}}</p>

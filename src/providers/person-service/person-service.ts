@@ -12,6 +12,7 @@ import 'rxjs/add/operator/map';
 export class PersonServiceProvider {
 
   data: any;
+  selectedPerson: any;
 
   constructor(public http: Http) {
     console.log('Hello PersonServiceProvider Provider');
