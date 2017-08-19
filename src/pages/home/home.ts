@@ -7,6 +7,7 @@ import {PersonServiceProvider} from "../../providers/person-service/person-servi
   templateUrl: 'home.html'
 })
 export class HomePage {
+  users: any;
 
   constructor(public navCtrl: NavController, public personService : PersonServiceProvider) {
 
@@ -15,7 +16,7 @@ export class HomePage {
     // this.navCtrl.push('LandingPage');
     this.personService.load()
       .then((users)=> {
-        console.log(users);
+        this.users = users;
       })
       .catch((error)=>{
         console.log(error);

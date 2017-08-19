@@ -18,27 +18,12 @@ export class PersonServiceProvider {
   }
 
   load() {
-    if (1){
-      return Promise.reject({
-        error : 'STATIC_REJECT',
-        message: 'Some error object.'
-      })
-    }
 
     if(this.data){
       return Promise.resolve(this.data);
     }
 
     return new Promise((resolve, reject) => {
-
-      let fail = true;
-      if (fail){
-        reject({
-          error : 'FAIL',
-          message: 'Something failed!'
-        });
-      }
-
       this
         .http
         .get('https://jsonplaceholder.typicode.com/users')
