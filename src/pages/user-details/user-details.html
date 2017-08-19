@@ -14,5 +14,17 @@
 
 
 <ion-content padding>
-  <h1>{{user.name}}</h1>
+  <ion-card>
+    <img src="https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/flip.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{user.name}}
+      </ion-card-title>
+        <ion-item><ion-icon name="contact" color="primary"></ion-icon> {{user.username}}</ion-item>
+        <ion-item><ion-icon name="home" color="secondary"></ion-icon> {{user.address.street}} {{user.address.suite}}</ion-item>
+        <ion-item><ion-icon name="compass"></ion-icon> {{user.address.city}}</ion-item>
+        <ion-item><ion-icon name="send"></ion-icon> {{user.email}}</ion-item>
+        <ion-item><ion-icon name="link"></ion-icon>{{user.website }}</ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
